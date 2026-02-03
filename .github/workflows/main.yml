@@ -1,0 +1,13 @@
+name: Deploy-Otomatis
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy ke Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .
